@@ -23,7 +23,7 @@ $(document).ready(function() {
     function searchWeather(searchValue) {
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey +"&units=imperial",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey +"&units=imperial",
         dataType: "json",
         success: function(data) {
             console.log(data);
@@ -63,7 +63,7 @@ $(document).ready(function() {
     function getForecast(searchValue) {
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=" + APIKey + "&units=imperial",
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=" + APIKey + "&units=imperial",
         dataType: "json",
         success: function(data) {
           // overwrite any existing content with title and empty row
@@ -97,7 +97,7 @@ $(document).ready(function() {
     function getUVIndex(lat, lon) {
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey + "&lat=" + lat + "&lon=" + lon,
+        url: "https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey + "&lat=" + lat + "&lon=" + lon,
         dataType: "json",
         success: function(data) {
           var uv = $("<p>").text("UV Index: ");
@@ -133,29 +133,4 @@ $(document).ready(function() {
 
 
 
-// $("#find-weather").on("click", function(event) {
 
-//     event.preventDefault();
-//     console.log("clicked");
-
-//     // Here we grab the text from the input box
-//     var city = $("#city-input").val();
-   
-//     // Here we construct our URL
-
-//     var APIKey = "969c89bca4e153f24fefd04611cdc292";
-
-
-//     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-   
-//     $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     }).then(function(data) {
-//       console.log(data);
-
-
-//     });
-
-// });
